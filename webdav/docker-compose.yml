@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webdav:
+      image: dober/webdav
+      ports:
+        - "127.0.0.1:81:80"
+      volumes:
+        - /data/webdav:/var/webdav
+      environment:
+        - USERNAME=test
+        - PASSWORD=test
+      restart: always
