@@ -9,7 +9,8 @@ then
 else
     echo Using no auth.
 	sed -i 's%auth_basic "Restricted";% %g' /etc/nginx/conf.d/default.conf
-	sed -i 's%auth_basic_user_file admin.password% %g' /etc/nginx/conf.d/default.conf
+	sed -i 's%auth_basic_user_file /etc/nginx/htpasswd/admin.password;% %g' /etc/nginx/conf.d/default.conf
+	sed -i 's%auth_basic_user_file /etc/nginx/htpasswd/user.password;% %g' /etc/nginx/conf.d/default.conf
 fi
 
 envsubst '${WEBDAV_PATH}' < /etc/nginx/conf.d/webdav.conf.template > /etc/nginx/conf.d/default.conf
