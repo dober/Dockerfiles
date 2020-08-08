@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nginx-webdav:
+    image: dober/nginx-webdav
+    ports:
+      - "127.0.0.1:82:80"
+    volumes:
+      - /tmp/webdav:/var/webdav
+      - ${PWD}/htpasswd:/etc/nginx/htpasswd
+    environment:
+      - USERNAME=test
+      - PASSWORD=test
+      - WEBDAV_PATH=/var/webdav
+    restart: always
