@@ -8,7 +8,6 @@ RUN addgroup --system --gid 101 nginx && \
     apt-get install --no-install-recommends --no-install-suggests -y apache2-utils gettext-base nginx nginx-extras && \
     rm -rf /var/lib/apt/lists/* && \
     ln -sf /dev/stderr /var/log/nginx/error.log && \
-    sed -i 's%www-data%nginx%g' /etc/nginx/nginx.conf && \
     rm /etc/nginx/sites-enabled/*
 
 ADD webdav.conf.template /etc/nginx/conf.d/webdav.conf.template
