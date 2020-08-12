@@ -25,6 +25,7 @@ server {
     location /webdav/admin {
         alias ${WEBDAV_PATH};
         client_body_temp_path /tmp;
+        client_max_body_size 300M;
         create_full_put_path  on;
         autoindex on;
         charset utf-8;
