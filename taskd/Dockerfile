@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.12
 
 # Install necessary stuff
 RUN apk -U --no-progress upgrade && \
